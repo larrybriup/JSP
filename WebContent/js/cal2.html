@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>cal.jsp</title>
+		<script language="javascript">
+			function cal(){//计算
+				document.getElementById("c1").focus();//光标定位
+				var c1=document.getElementById("c1").value;
+				var res=document.getElementById("sum");
+				
+				 res.value=eval(c1);//计算字符串计算的结果
+			}
+			//true通过验证
+			//false没有
+			function check(a,b){
+				if(a.indexOf(" ")!=-1){
+					alert("第一个输入框里有空格!");
+					return false;
+				}
+				if(b.indexOf(" ")!=-1){
+					alert("第二个输入框里有空格!");
+					return false;
+				}
+				if(isNaN(a)||a==""){
+					alert("第一个输入框不是数字!");
+					return false;
+				}
+				if(isNaN(b)||b==""){
+					alert("第二个输入框不是数字!");
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</head>
+	<body bgcolor="lightgray">
+		<input id="c1" type="text" onabort="alert('三炮');return false"><br>
+		<input type="button" value="计算" onclick="cal()"><hr>
+		<input id="sum" type="text"><br>
+	</body>
+</html>
+
+
+
+
+
+
+

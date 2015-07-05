@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>showTime</title>
+		<script language="javascript">
+			function showTime(){
+				var date = new Date();
+				var h=date.getHours();
+				var m=date.getMinutes();
+				var s=date.getSeconds();
+				
+				var dis=h+":"+m+":"+s;
+				
+				time.value=dis;
+				
+			}
+			var id=-1;
+			function autoShowTime(){
+				if(id==-1){
+				id=window.setInterval("showTime()",1000);
+				alert(id);
+				}
+			}
+			function stopShowTime(){
+				if(id!=-1){
+				window.clearInterval(id);
+				id=-1;
+				}
+			}
+			//另外一个定时调用方法
+			function test(){
+				setTimeout("showTime()",5000);//只调用一次
+			}
+			
+			//和setInterval()效果一样
+			function test2(){
+				showTime();
+				setTimeout("test2()",1000);//调用本身
+			}
+		</script>
+	</head>
+	<body>
+		<input id="time" type="text" disabled="disabled"><br>
+		<input type="button" value="ShowTime" onclick="showTime()">
+		<input type="button" value="autoDisplay" onclick="autoShowTime()">
+		<input type="button" value="stopDisplay" onclick="stopShowTime()"><hr>
+		<input type="button" value="定时" onclick="test()">
+		<input type="button" value="定时2" onclick="test2()">
+	</body>
+</html>
+
+
+
+
+
+
+

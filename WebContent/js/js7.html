@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>js7.jsp</title>
+		<script language="javascript">
+			function check(){
+				var temp=document.getElementsByName("hoppy");
+				var prt=document.getElementById("prt");
+				
+				for(var i in temp){
+					var box=temp[i];
+					if(box.checked==true){
+						var k=(parseInt(i)+1);
+						alert("您选择的是第"+k+"个选项:");
+					}
+						prt.innerHTML="您选择的是第"+k+"个选项:";
+				}
+			}
+		</script>
+	</head>
+	<body bgcolor="lightgray">
+		<input  type="checkbox" name="hoppy">足球
+		<input  type="checkbox" name="hoppy">篮球
+		<input  type="checkbox" name="hoppy">排球
+		<input  type="checkbox" name="hoppy">羽毛球
+		<input type="button" value="检查" onclick="check()">
+		<hr>
+		<font id="prt" color="red"></font>
+	</body>
+</html>
+
+
+
+
+
+
+

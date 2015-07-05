@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<title>validateJS4</title>
+		<script language="javascript">
+			function check(val){
+				var len=val.length;
+					var num=30-len;
+					if(num<0){
+						return;
+					}
+					var myFont=document.getElementById("myFont");
+					myFont.innerHTML=num;
+			}
+		</script>
+	</head>
+	<body>
+		<textarea rows="4" cols="20" onkeyup="check(this.value)">
+			
+		</textarea>
+		<div>你还能输入<font id="myFont" color="red"></font>个字</div>
+	</body>
+</html>
+
+
+
+
+
+
+

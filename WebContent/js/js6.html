@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>js6.jsp</title>
+		<script language="javascript">
+		function test(){
+			var input=document.getElementById("i1");
+			//alert(input.value);
+			var div=document.getElementById("div");
+			//div.innerHTML = input.value;
+			//alert(div.innerHTML);
+			
+			var color=document.getElementById("color").value;
+			alert(div.innerHTML);
+			div.innerHTML="<font color='"+color+"'>"+input.value+"</font>";
+		}
+		</script>
+		<!-- 
+			var input=document.getElementById("i1");
+			input.value="chendachao"//修改值
+			alert(input);
+			var div=document.getElementById("div");
+			//alert(div.innerHTML);
+			div.innerHTML="<font color='red'>div2</font>";
+		
+		 -->
+	</head>
+	<body>
+	<input id="i1" type="text" name="text" value="choda"><br>
+	<input id="color" type="text" name="text" value="red"><br>
+	<div id="div" name="mydiv">div simida</div>
+		
+	<input type="button" value="点击" onclick="test()"><br>
+		 
+	</body>
+</html>
+
+
+
+
+
+
+

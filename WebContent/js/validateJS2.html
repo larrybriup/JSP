@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>validateJS2</title>
+		<script language="javascript">
+			function check(){
+				var name=document.getElementById("name").value;
+				var flag=true;
+				if(name==""||name.indexOf(" ")!=-1){
+				mySpan.innerHTML="用户名没有写或者不合法";
+					flag=false;
+				}
+				
+				return flag;
+			}
+		</script>
+	</head>
+	<body>
+		<!-- onblur 失去焦点 -->
+		<form action="servlet" method="post" onsubmit="return check()">
+			用户名:<input id="name" name="name" type="text" /><span id="mySpan"></span><br>
+			密码:<input id="password" name="pasword" type="text"/><br>
+			<input type="submit" value="登录" /><br>
+		</form>
+	</body>
+</html>
+
+
+
+
+
+
+

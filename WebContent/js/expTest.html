@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>expTest.jsp</title>
+		<script language="javascript">
+			var str=" 1+23-4*4+5=23";
+			var re=/[^0-9]+/g;
+			//转义用\,\s匹配空字符,\S相反,\w匹配字母数字下划线,\W相反,\d匹配数字,\D匹配非数字
+			//\b匹配退格符,
+			//^行首$行尾,+表示至少出现一次
+			var re2=/\s+/g;
+			var arr=re.exec(str);//取出str中和re对应的值
+			//alert(str.split(re));//根据正则表达式拆分str
+			//alert(re2.exec(str.split(re)));
+			//alert(re2);//输出整个正则表达式
+			//alert(re2.source);//输出正则表达式的内容
+			var s="\\?";
+			//alert(s);
+			//new 形式的正则表达式转义要用\\,而不是\
+			var re3=new RegExp("\\?");
+			var re4=/\=/;
+			//alert(re4.exec(str));
+			
+			var st="1+9=10\r2+6=8\r3-9=-6";
+			var re5=/\r/;
+			var arr=st.split(re5);
+			//alert(arr[arr.length-1]);
+				var ss="";
+			for(var i in arr){
+				 ss+=arr[i];
+			}
+			//alert(ss);//数组的内容合并之后的结果
+			var arr2=st.split("\r");//直接在这里面用正则表达式转义\就可以
+			//alert(arr2[0]);
+			var j=10;
+			//alert(9/4);
+			//alert(Math.floor(4));
+			var tt="hello word\r";
+			alert(tt.trim().length);
+		</script>
+	</head>
+	<body>
+		<p>还会</p>
+	</body>
+</html>
+
+
+
+
+
+
+

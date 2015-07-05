@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calculate</title>
+	<script language="javascript">
+		//document.getElementById("result").focus();
+		function calc(){
+				check();
+				var res=document.getElementById("result");
+				var reg=/=/;
+			if(reg.exec(res.value)=="="){//如果文本框里有=号就进来
+				var re=/\s/;//匹配空字符
+				var arr=res.value.split(re);//分割
+				if(arr[arr.length-1]=="") return;//如果没有公式就按=号直接退出
+				var cal=arr[arr.length-1];//取出分割后的最后一个值
+				res.value+="="+eval(cal)+"\r";//把值赋给文本框并且换行
+			}else{
+				if(res.value=="")//如果文本框没有公式就按=号直接退出
+					return;
+		 		res.value+="="+eval(res.value)+"\r";
+			}
+		}
+		function prt(a){//显示点击按钮值
+			var res=document.getElementById("result");
+				res.value+=a;
+		}
+		function clr(){//清空文本框
+			var res=document.getElementById("result");
+			res.value="";
+		}
+		function baks(){//退格
+			var res=document.getElementById("result");
+			var str=res.value;
+			res.value=str.substring(0,str.length-1);
+		}
+		function check(){//检查公式是否合法,这里认为没有字母就合法
+			var res=document.getElementById("result");
+			var re=/[a-zA-Z]/;
+			if(re.test(res.value)){
+				alert("公式中不能有字母!");
+			}
+		}
+	</script>
+	<style type="text/css">
+		#div0{
+			width:200px;
+			margin-top:20px;
+			margin-left:400px;
+			border-radius:5px;
+			border:1px solid white;
+		}
+		#div1{
+		width:200px;
+		height:320px;
+		border:1px solid gray;
+		float:left;
+		background-color:gray;
+		border-radius:5px;
+		margin-top:20px;
+		margin-left:400px;
+		}
+		#div2{
+			width:78px;
+			height:30px;
+			margin-left:60px;
+			border-radius:5px;
+			border:1px solid gray;
+		}
+		#div3{
+			height:60px;
+			margin-top:0px;
+			border-radius:5px;
+			border:1px solid gray;
+		}
+		#div4{
+			width:175px;
+			margin-top:10px;
+			margin-left:12px;
+			background-color:lightgray;
+			border-radius:5px;
+		}
+		#result{
+			width:160px;
+			height:50px;
+			margin:auto;
+			margin-left:15px;
+			border-radius:5px;
+		}
+		input{
+			width:40px;
+			height:40px;
+		}
+	</style>
+</head>
+<body>
+		<div id="div0">
+			<h2>Just For 小绵羊</h2>
+		</div>
+	<div id="div1">
+		<div id="div2"><font size="5">计算器</font></div>
+		<div id="div3"><textarea id="result" type="text" autofocus="autofocus"></textarea></div>
+		<div id="div4">
+			<input name="b" type="button" value="1" onclick="prt(this.value)">
+			<input name="b" type="button" value="2" onclick="prt(this.value)">
+			<input name="b" type="button" value="3" onclick="prt(this.value)">
+			<input name="b" type="button" value="+" onclick="prt(this.value)"><br>
+			<input name="b" type="button" value="4" onclick="prt(this.value)">
+			<input name="b" type="button" value="5" onclick="prt(this.value)">
+			<input name="b" type="button" value="6" onclick="prt(this.value)">
+			<input name="b" type="button" value="-" onclick="prt(this.value)"><br>
+			<input name="b" type="button" value="7" onclick="prt(this.value)">
+			<input name="b" type="button" value="8" onclick="prt(this.value)">
+			<input name="b" type="button" value="9" onclick="prt(this.value)">
+			<input name="b" type="button" value="*" onclick="prt(this.value)"><br>
+			<input name="b" type="button" value="0" onclick="prt(this.value)">
+			<input name="b" type="button" value="." onclick="prt(this.value)">
+			<input name="b" type="button" value="<-" onclick="baks()">
+			<input name="b" type="button" value="/" onclick="prt(this.value)"><br>
+			<input type="button" value="clear" onclick="clr()">
+			<input name="b" type="button" value="(" onclick="prt(this.value)">
+			<input name="b" type="button" value=")" onclick="prt(this.value)">
+			<input name="b" type="button" value="=" onclick="calc()">
+		</div>
+	</div>
+</body>
+</html>

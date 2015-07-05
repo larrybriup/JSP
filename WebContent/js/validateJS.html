@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>validateJS</title>
+		<script language="javascript">
+		var arr=new Array();
+		arr[0]="tom";
+		arr[1]="choda";
+		arr[2]="lili";
+		function check(){
+				var username=document.getElementById("username");
+				var nameValue=username.value;
+				if(nameValue==""){
+					nameValue="请输入用户名";
+					return;
+				}
+				if(nameValue==""){
+					alert("名字还没有输入!");
+					return;
+				}
+				var msg="用户名可用!";
+				var font=document.getElementById("myFont");
+				font.color="green";
+				for(var i in arr){
+					if(nameValue==arr[i]){
+						 msg="用户名不可用!";
+						font.color="red";
+						//return;
+					}
+				}
+				font.innerHTML=msg;
+			}
+		function clr(){
+			var username=document.getElementById("username");
+			if(username.value=="请输入用户名"){
+			username.value="";
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<!-- onblur 失去焦点 -->
+		用户名:<input id="username" type="text" value="请输入用户名" onfocus="clr()" onblur="check()"/>
+				<span id="mySpan"><font id="myFont"></font></span><br>
+		密码:<input id="password" type="text"/><br>
+		<input type="button" value="提交"/><br>
+	</body>
+</html>
+
+
+
+
+
+
+

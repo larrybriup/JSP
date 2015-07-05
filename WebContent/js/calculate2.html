@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>calculate2</title>
+	<script language="javascript">
+		function leader(){//按顺序调用创建按钮方法,
+			for(var i=1;i<21;i++){
+				switch(i){
+				case 4: i="+"; cBtn(i); i=4; break;
+				case 8: i="-"; cBtn(i); i=8; break;
+				case 12:i="*"; cBtn(i); i=12;break;
+				case 16:i="/"; cBtn(i); i=16;break;
+				case 13:i="0"; cBtn(i); i=13;break;
+				case 14:i="."; cBtn(i); i=14;break;
+				case 18:i="("; cBtn(i); i=18;break;
+				case 19:i=")"; cBtn(i); i=19;break;
+				case 20:
+					i="=";
+					div3.innerHTML+="<input class='bt' type='button' value='"+i+"' onclick='cal()'/>";
+					i=20;
+					break;
+				case 15:
+					i="<-";
+					div3.innerHTML+="<input class='bt' type='button' value='"+i+"' onclick='baks()'/>";
+					i=15;
+					break;
+				case 17:
+					i="clear";
+					div3.innerHTML+="<input class='bt' type='button' value='"+i+"' onclick='clr()'/>";
+					i=17;
+					break;
+				default:
+					var j=i-Math.floor(i/4);//整除
+					cBtn(j);
+					break;
+				}
+				if(i%4==0){//调整按钮布局四个一行
+					div3.innerHTML+="<br>";
+				}
+			}
+		}	
+		function prt(a){//在文本框中显示按钮值
+			var res=document.getElementById("result");
+			res.value+=a;
+		}
+		function cBtn(i){//创建按钮
+			div3.innerHTML+="<input class='bt' type='button' value='"+i+"'/ onclick='prt(this.value)'>";
+		}
+		function cal(){//计算
+			var res=result.value;
+			check(res);
+			var reg=/=/;
+			if(reg.test(res)){//如果公式里有=号就进来
+				var re=/\s/;
+				var arr=res.split(re);//利用空字符把公式分割,取数组最后一个,然后计算
+				var lstv=arr[arr.length-1];
+				if(lstv=="") return;//如果公式第一行之后直接点击=号就会退出
+				result.value+="="+eval(lstv)+"\r";//结果累加
+			}else{//如果公式里没有=号,说明是第一次输入,直接计算,然后后面加回车\r
+				if(result.value=="") return;
+				result.value+="="+eval(result.value)+"\r";
+			}
+		}
+		function clr(){//清空文本框
+			result.value="";
+		}
+		function baks(){//退格
+			result.value=result.value.trim().substring(0,result.value.trim().length-1);
+		}
+		function check(a){
+			var re=/[a-zA-Z]/g;//匹配字母
+			if(re.test(a)){//如果a中有字母
+				alert("公式内不能有字母!");
+				return;
+			}
+		}
+	</script>
+	<style type="text/css">
+		#div0{
+		border:1px solid white;
+		width:190px;
+		height:320px;
+		margin-left:300px;
+		margin-top:0px;
+		float:left;
+		background-color:gray;
+		border-radius:10px;
+		}
+		#div1{
+		border:1px solid gray;
+		width:78px;
+		height:30px;
+		margin-left:60px;
+		}
+		#div2{
+		border:1px solid gray;
+		margin-left:10px;
+		
+		}
+		#div3{
+		border:1px solid gray;
+		width:160px;
+		margin-left:14px;
+		background-color:lightgray;
+		border-radius:5px;
+		}
+		input{
+		width:40px; 
+		height:40px; 
+		}
+		#result{
+		width:160px; 
+		height:60px;
+		border-radius:5px; 
+		}
+		#div4{
+		margin-left=400px;
+		float:center;
+		border:1px solid white;
+		}
+		.bt{
+		border-radius:10px;
+		background-color:white;
+		color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="div4"><h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大灰狼VS小绵羊</h2></div>
+	<div id="div0">
+		<div id="div1"><font size="5">计算器</font></div>
+		<div id="div2">
+			<textarea id="result" autofocus="autofocus"></textarea>
+		</div>
+		<div id="div3"></div>
+	</div>
+	 <script language="javascript">leader();</script>
+</body>
+</html>

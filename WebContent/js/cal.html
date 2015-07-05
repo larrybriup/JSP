@@ -1,0 +1,112 @@
+<html>
+	<head>
+		<title>cal.jsp</title>
+		<script language="javascript">
+			function cal(){//计算
+				var c1=document.getElementById("c1").value;
+				var c2=document.getElementById("c2").value;
+				var punc=document.getElementById("punc");
+				
+				var sum =document.getElementById("sum");
+				
+				var i=parseInt(c1);
+				var j=parseInt(c2);
+				
+				if(check(c1,c2)){
+					switch(punc.value){
+					case "+":
+						var o=parseInt(c1)+parseInt(c2);
+						sum.value=c1+"+"+c2+"="+o;
+						break;
+					case "-":
+						var o=parseInt(c1)-parseInt(c2);
+						sum.value=c1+"-"+c2+"="+o;
+						break;
+					case "*":
+						var o=parseInt(c1)*parseInt(c2);
+						sum.value=c1+"*"+c2+"="+o;
+						break;
+					default:
+						if(c2=="0"){
+							alert("除数不能为0!");
+						}else{
+							var o=parseInt(c1)/parseInt(c2);
+							sum.value=c1+"/"+c2+"="+o;
+						}
+						break;
+					}
+				}
+				document.getElementById("c1").focus();//光标定位
+			}
+			//true通过验证
+			//false没有
+			function check(a,b){
+				if(a.indexOf(" ")!=-1){
+					alert("第一个输入框里有空格!");
+					return false;
+				}
+				if(b.indexOf(" ")!=-1){
+					alert("第二个输入框里有空格!");
+					return false;
+				}
+				if(isNaN(a)||a==""){
+					alert("第一个输入框不是数字!");
+					return false;
+				}
+				if(isNaN(b)||b==""){
+					alert("第二个输入框不是数字!");
+					return false;
+				}
+				return true;
+			}
+			function check5(){
+				var punc=document.getElementById("punc");
+				alert(punc.value);
+			}
+		</script>
+		<style type="text/css">
+			input{
+			width:50px;
+			}
+			#sum{
+			width:100px;
+			}
+			.div1{
+			height:100px;
+			margin-left:103px;
+			float:left;
+			border:1px solid gray;
+			background-color:lightgray;
+			}
+			.div2{
+			margin-left:103px;
+			margin-top:10px;
+			border:1px solid lightgray;
+			}
+		</style>
+	</head>
+	<body>
+	<div class="div1">
+		<input id="c1" type="text" onabort="alert('三炮');return false">
+		<select id="punc" onchange="check5(this)">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+		</select>
+		<input id="c2" type="text"><br>
+	<div class="div2">
+		<input type="button" value="计算" onclick="cal()"><br>
+		<input id="sum" type="text"><br>
+	</div>
+	</div>
+		 
+	</body>
+</html>
+
+
+
+
+
+
+

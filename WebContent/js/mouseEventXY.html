@@ -1,0 +1,37 @@
+<html onmousemove="ltn(event.pageX,event.pageY)">
+	<!-- 
+	IE中用 event.x,event.y
+	其他浏览器中用 event.pageX,event.pageY
+	 -->
+	<head>
+		<title>mouseEventXY</title>
+		<script language="javascript">
+			function ltn(x,y){
+				dis.value="("+x+","+y+")";
+				}
+			function move(){
+				var xx=parseInt(Math.random()*701);				
+				var yy=parseInt(Math.random()*501);
+				
+				btn.style.left=xx+"px";
+				btn.style.top=yy+"px";
+				}
+		</script>
+		<style type="text/css">
+			#btn{
+			position:absolute;
+			}
+		</style>
+	</head>
+	<body>
+	<input id="dis" type="text"  disabled="true" />
+	<input id="btn" type="button" value="点我" onmouseover="move()"/>
+	</body>
+</html>
+
+
+
+
+
+
+

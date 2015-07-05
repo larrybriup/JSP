@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>cal3.jsp</title>
+		<script language="javascript">
+			function check1(){
+				var temp=document.getElementsByName("gender");
+				for(var i in temp){
+					var radio=temp[i];
+					if(radio.checked==true){
+						alert("您选择的是第"+(parseInt(i)+1)+"个选项");
+					}
+				}
+			}
+			function check2(){
+				var temp=document.getElementsByName("hoppy");
+				for(var i in temp){
+					var box=temp[i];
+					if(box.checked==true){
+						alert("您选择的是第"+(parseInt(i)+1)+"个选项");
+					}
+				}
+				
+			}
+			function check3(){
+				var temp=document.getElementsByName("hoppy");
+				var flag=false;
+				for(var i=0;i<temp.length;i++){
+					var box=temp[i];
+					flag=box.checked;
+					if(flag){
+					box.checked=false;
+					}else{
+					box.checked=true;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body bgcolor="lightgray">
+		<input  type="radio" checked="true" name="gender">男
+		<input type="radio" name="gender">女
+		<input  type="radio" name="gender">妖<br>
+		<input type="button" value="检查" onclick="check1()">
+		<hr>
+		<input  type="checkbox" name="hoppy">足球
+		<input  type="checkbox" name="hoppy">篮球
+		<input  type="checkbox" name="hoppy">排球
+		<input  type="checkbox" name="hoppy">羽毛球
+		<input type="button" value="检查" onclick="check2()">
+		<input type="button" value="全选/反选" onclick="check3()">
+		<hr>
+		
+	</body>
+</html>
+
+
+
+
+
+
+

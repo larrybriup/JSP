@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>mouseAction</title>
+		<script language="javascript">
+			function buttonOn(){
+				btn.disabled=false;
+				}
+			function buttonOff(){
+				btn.disabled=true;
+				}
+			var flag=true;//true是小的
+			function changeBig(temp){
+				if(flag){
+					temp.width="272";
+					temp.height="222";
+					flag=false;
+				}else{
+					temp.width="136";
+					temp.height="111";
+					flag=true;
+				}
+			}
+			function display1(){
+				myImg.style.display="table-cell";//显示元素
+			}
+			function nodisplay1(){
+				myImg.style.display="none";//隐藏元素
+			}
+			var curr=0;
+			function next(){
+				curr=curr+1;
+				alert(curr);
+				if(curr>9){
+					next1.disabled=true;
+				}
+				myImg.src="images/"+curr+".jpg";
+			}
+			function last(){
+				if(curr<0){
+					last1.disabled=true;
+				}
+				curr=curr-1;
+				alert(curr);
+				myImg.src="images/"+curr+".jpg";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" value="测试" id="btn"/><br>
+		<input type="button" value="on" onclick="buttonOn()" style="cursor:pointer"/>
+		<input type="button" value="off"  onclick="buttonOff()"/>
+		<hr>
+			<img  src="images/11.gif" onclick="changeBig(this)" id="small" style="cursor:pointer">
+		<hr>
+		<div style="border:1px solid red; width:136px; height:111px">
+			<img  src="images/11.gif" id="myImg"><br>
+		</div>
+		<input type="button" value="显示" onclick="display1()"/>
+		<input type="button" value="隐藏" onclick="nodisplay1()"/>
+		
+		<input id="next1" type="button" value="下一张" onclick="next()"/>
+		<input id="last1" type="button" value="上一张" onclick="last()"/>
+	</body>
+</html>
+
+
+
+
+
+
+

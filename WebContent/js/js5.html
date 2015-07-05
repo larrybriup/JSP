@@ -1,0 +1,56 @@
+<html>
+	<head>
+	<!-- 
+	
+	 -->
+		<title>js5.jsp</title>
+	</head>
+	<body>
+	<input type="button" value="跳转" onclick="javascript:open('http://www.google.com')">
+	<input type="button" value="前进" onclick="javascript:window.history.forward()">
+	<input type="button" value="后退" onclick="javascript:window.history.back()">
+	<input type="button" value="后退" onclick="javascript:window.history.go()">
+	
+	<div id="div1" name="divone">e</div>
+	<div id="div2" name="divone">f</div>
+	<div id="div3" name="divtwo"></div>
+	<div id="div4" name="divtwo" class="cls"></div>
+		<script language="javascript">
+			//open("http://www.google.com");//打开一个新的网页链接页面
+			//window.location.href=("http://www.google.com");//在当前页面打开一个网页链接页面
+			var div1=window.document.getElementById("div1");
+			var div2=window.document.getElementsByName("divtwo");
+			//alert(div1);
+			/**
+			alert(div2);
+			alert(div2.length);
+			alert(div2[0]);
+			*/
+			var div3=window.document.getElementsByTagName("div");
+			var div4=window.document.getElementsByClassName("cls");
+			/**
+			alert(div3);
+			alert(div3.length);
+			alert(div3[0]);
+			alert(div3[10]);
+			alert(div4);
+			alert(div4.length);
+			alert(div4[0]);
+			alert(div4[10]);
+			*/
+			for(var i in div1){
+			//	alert(i);
+				document.writeln(i);
+			}
+			
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+

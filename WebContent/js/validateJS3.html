@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<title>validateJS3</title>
+		<script language="javascript">
+			function check(){
+				var name=document.getElementById("name").value;
+				var flag=true;
+				if(name==""||name.indexOf(" ")!=-1){
+				mySpan.innerHTML="用户名没有写或者不合法";
+					flag=false;
+				}
+				
+				return flag;
+			}
+			function check2(){
+				//alert(document.forms);//拿到页面中所有表单的集合
+				//alert(document.forms[0]);//通过下标拿值
+				//alert(document.forms.myForm);//通过form表单中name的属性值來拿值
+				
+				if(check()){
+				document.forms.myForm.submit();
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<form name="myForm" action="servlet" method="post">
+			用户名:<input id="name" name="name" type="text" /><span id="mySpan"></span><br>
+			密码:<input id="password" name="pasword" type="text"/><br>
+		</form>
+			<input type="button" value="登录" onclick="check2()"/><br>
+	</body>
+</html>
+
+
+
+
+
+
+
