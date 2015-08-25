@@ -1,0 +1,195 @@
+JavaScript:
+		也是一种开发语言,但是和java语言没有关系,java主要是做服务器段的程序开发,javascript主要是客户端页面中脚本语言的开发,javascript是一种脚本语言.
+		网景公司推出的.
+		JavaScript语言特点:
+			1)解释执行.
+			2)弱语言.
+			3)基于对象
+			4)事件驱动.
+			5)简单性.
+			6)不同浏览器的支持是不同的
+			
+	如何去写?
+		js代码的位置:
+		 1)直接写到页面中
+		 2)写到标签元素的事件属性里面
+		 3)写到外部文件里面(.js结尾)
+		 如果写到标签里面必须这样:
+		 <script language="javascript"></script>
+		 
+		 浏览器可以直接运行js代码,但是不同浏览器中运行相同的js代码可能结果不同,甚至有时候还会报错,
+		 
+		 
+		 js可以做什么?
+		 1)对客户端的数据进行计算.
+		 2)动态改变页面中标签元素的属性.
+		 3)动态创建后者删除页面中的标签元素.
+		 4)获取页面中的数据(输入框中的值,鼠标的当前坐标)
+		 5)验证用户所填写的表单中的数据合法性.
+		 6)在Ajax中使用js去解析服务器端传过来的文本或者xml文档.
+		 注意:DHTML的概念很多时候指的就是html+css+js在页面中实现的一些动态效果.
+		 js中的注释:
+		 和java中的注释一样,// /***/
+		 
+			js中的三种弹框方式
+			alert:警告框,alert("");alert('')
+			confirm:确认框
+			prompt:输入对话框
+			这三个方法都是window下面的方法
+			window是js中的一个内置对象,只有他可以不写而直接调用方法
+			
+			三种弹框都有一个共同的特点,当浏览器运行一个弹框代码的时候就会卡在那.
+			
+			alert弹出一个警告框,用户点击继续按钮之后就可以访问,
+			confirm弹出一个确认框,用户可以点击确定或者取消,这个confirm返回相应的true或者false.
+			prompt弹出一个可以让用户输入的窗口,这方法会把用户输入的内容返回.
+					prompt("请输入您的性别:","男");可以加默认值.
+			
+		alert("Hello!");
+		a=confirm("退出?");
+		alert(a);
+		window.open("www.google.com");
+		a=prompt("请输入您的性别:","男");
+		alert("三炮的性别是:"+a);
+		
+		if(confirm("确认删除?:")){
+		alert("删除成功!");
+		}
+		js中的null和undifined
+		//nulltext
+		 var age=null;
+		 alert(age);
+		 
+		 //undifined
+		 var age;
+		  alert(age);
+		  
+		  js中声明变量,任何变量都可以用var声明,
+		  var a="";
+		  var i=0;
+		  var b=10.9;
+		  var d=new Date();
+		  var e=true;
+		  
+		  标识符:大小写敏感,不能以数字开头,可以由字母,数字,下划线,$符号组成,还不能是js中的关键字,
+		  
+		js中一些内置对象 的使用:
+				document.write("<h2>字符串对象的操作</h2>");
+				var s="Hello World!";
+				document.write(s.length+"<br>");
+				document.write(s.substr(3,4)+"<br>");//从下标为3的位置开始截取4个字符,包括下标为3的字符
+				document.write(s.substring(3,4)+"<br>");//截取下标为3到下标4
+				document.write(s.trim().length+"<br>");//去两边的空格
+				document.write(s.toUpperCase()+"<br>");
+				document.write(s.toLowerCase()+"<br>");
+				document.write(s.split(" ")+"<br>");
+				document.write(s.split(" ").length+"<br>");
+				document.write("<hr>");
+				document.write("<h2>日期对象的操作</h2>");
+				var date = new Date();
+				document.write(date+"<br>");
+				document.write(date.getYear()+"<br>");//-1990之后的
+				document.write(date.getFullYear()+"<br>");//全年
+				document.write(date.getMonth()+"<br>");//月
+				document.write(date.getDate()+"<br>");//号
+				document.write(date.getDay()+"<br>");//星期
+				document.write(date.getHours()+"<br>");//获得时间24进制
+				document.write(date.getMinutes()+"<br>");//获得分钟
+				document.write(date.getSeconds()+"<br>");//获得秒
+				document.write(date.getTime()+"<br>");//时间搓
+				document.write(date.getMilliseconds()+"<br>");//毫秒
+				document.write("<h2>Math对象的操作</h2>");
+				document.write(Math.PI+"<br>");//圆周率
+				document.write(Math.E+"<br>");//自然数
+				document.write(Math.random()+"<br>");//随机数[0-1)
+				document.write(parseInt(Math.random()*14+23)+"<br>");//随机数[23-36]
+				document.write(Math.min(4,80,7,34)+"<br>");//获得较小的数字
+				document.write(Math.max(4,80)+"<br>");//获得较大的数字
+		
+				document.write("<h2>数组对象的操作</h2>");
+				//var a= new Array(5);//可以指定,也可以不指定
+				var a= new Array();//js中数组是可变长度的
+				/**
+				js中数组特店:
+					1,长度可变.
+					2,数组里放的类型可以不同.
+					3,数组的长度是和你所使用的最大下标相关的.
+				*/
+				a[0]="Tom0";
+				a[1]="Tom1";
+				a[2]="Tom2";
+				a[7]="Tom7";
+		
+				document.write(a.length+"<br>");//
+				document.write(a+"<br>");//
+		
+				//for-in循环
+				for(var i in a){
+					document.write(a[i]+"<br>");//
+				}
+		  
+		  5,其他常见的对象.
+		  	window
+		  	window.open("url");//打开一个新的网页链接页面
+		  	window.location.href=();//在当前页面打开一个网页链接页面
+		  	window.history.forward()//浏览器中的历史记录前进访问过的页面
+			window.history.back()//历史记录后退,得有访问过的
+			window.history.go(-1)//后退n个页面
+			window.history.go(1)//前进n个页面
+			
+			//在js可以获取html页面中的标签元素对象
+			//document代表整个xml文档
+			window.document
+			
+			//通过id属性拿到.如果html中有两个相同的元素那么拿到的是最上面的
+			document.getElementById("div1");
+			document.getElementsByName("divtwo");//通过name属性拿到
+			document.getElementsByTagName("div");//通过标签name属性拿到
+			document.getElementsByClassName("cls");//通过class属性拿到
+			
+			
+			拿到之后可以给元素赋值.
+			1,在元素中添加文本值
+		var input=document.getElementById("i1").value;//拿到值了就
+				var div=document.getElementById("div");//取div里面的值
+			alert(div.innerHTML);
+			2,修改元素中的属性值
+			input.value="chendachao"//修改值
+			
+			var color=document.getElementById("color").value;//如果要是修改就不能这样里
+			div.innerHTML="<font color='"+color+"'>"+input.value+"</font>";
+			3,添加或者删除某些元素
+			
+			
+			js中判断一个变量是否不是一个数字
+				idNaN();
+				
+				js中的全局函数
+				eval(c1);//计算字符串计算的结果
+				获得光标焦点
+				document.getElementById("c1").focus();
+				
+				js中两种定时调用的方法:
+				setInterval("",num);
+				setTimeout("",num);
+			都是window下面的方法.
+			例如:
+			每隔1000ms调用一次方法.方法返回一个id值
+			var id=
+			setInterval("showTime()",1000);
+			
+			//清除某个定时调用的任务
+			window.clearInterval(id);
+			
+			//表示5000ms之后会调用showTime()方法,而且智慧调用一次
+			setTimeout("showTime()",5000);
+				
+		  
+		  
+		
+		 
+		 
+		 
+		 
+		 
+		 
