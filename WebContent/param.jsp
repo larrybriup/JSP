@@ -5,23 +5,23 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>el.jsp</title>
+<title>param.jsp</title>
 </head>
 <body>
 	<%
-		pageContext.setAttribute("name2","choda2");
-		request.setAttribute("name3","choda3");
-		session.setAttribute("name4","choda4");
-		application.setAttribute("name5","choda5");
+		pageContext.setAttribute("name","larry2");
+		request.setAttribute("name","larry3");
+		session.setAttribute("name","larry4");
+		application.setAttribute("name","larry5");
 		
 		Student s= new Student();
 		s.setId(1);
-		s.setName("mimi");
+		s.setName("Larry");
 		s.setAge(23);
 		request.setAttribute("stu",s);
 	%>
 	<jsp:forward page="el.jsp">
-		<jsp:param value="choda1" name="name1"/>
+		<jsp:param value="larry1" name="name"/>
 		<jsp:param value="86" name="score"/>
 	</jsp:forward>
 </body>

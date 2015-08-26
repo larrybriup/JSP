@@ -8,7 +8,7 @@
 <title>login.jsp</title>
 </head>
 <body>
-<h1>huanghin</h1>
+<h1>Welcome!</h1>
 <%
 Object msg=request.getAttribute("msg");
 out.println(msg);

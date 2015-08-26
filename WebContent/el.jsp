@@ -9,43 +9,43 @@
 </head>
 <body>
 	<h1>EL表达式</h1>
-	<%=request.getParameter("name1")%>
-	<%=pageContext.getAttribute("name2")%>
-	<%=request.getAttribute("name3")%>
-	<%=session.getAttribute("name4")%>
-	<%=application.getAttribute("name5")%>
+	request: <%=request.getParameter("name")%>,
+	pageContext: <%=pageContext.getAttribute("name")%>,
+	request: <%=request.getAttribute("name")%>,
+	session: <%=session.getAttribute("name")%>,
+	application: <%=application.getAttribute("name")%>
+	<hr />
 	<br>
-	${param.name1}
-	${pageScope.name2}
-	${requestScope.name3}
-	${sessionScope.name4}
-	${applicationScope.name5}
+	param: ${param.name},
+	pageScope: ${pageScope.name},
+	requestScope: ${requestScope.name},
+	sessionScope: ${sessionScope.name},
+	applicationScope: ${applicationScope.name}
+	<hr />
 	<br>
-	${param.name1}
-	${name2}
-	${name3}
-	${name4}
-	${name5}
+	${param.name}
+	${name}
+	<hr />
 	<br>
 	<h1>Student</h1>
-	${stu}
-	${stu.id}
-	${stu.name}
-	${stu.age}
-	${stu.word}
+	${stu},
+	${stu.id},
+	${stu.name},
+	${stu.age},
+	${stu.word},
 	${stu["word"]}
 	<br>
 	<h1>字符串</h1>
 	${"hello" }
 	<br>
 	<h1>运算结果或者boolean表达式</h1>
-	${6-8}
-	${1<9}
-	${empty "jiji"}
-	${not empty "jiji"}
-	${!empty "jiji"}
-	${param.score>100}
-	${param.score>60?"good":"fuck"}
+	${6-8},
+	${1<9},
+	${empty "jiji"},
+	${not empty "jiji"},
+	${!empty "jiji"},
+	${param.score>100},
+	${param.score>60?"good":"failure"}
 	<h1>数字 集何的元素</h1>
 	<%
 		String[] str= {"jiji","heihei"};

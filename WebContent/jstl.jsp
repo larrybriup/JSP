@@ -108,7 +108,7 @@
 	<c:out value="${5+9 }"></c:out>
 	<c:out value="${stu[2].name}"></c:out>
 	<hr>
-	<c:set var="name" value="zhangsi" scope="request"></c:set>
+	<c:set var="name" value="zhaosi" scope="request"></c:set>
 	${name}
 	<hr>
 	<c:remove var="name"/>

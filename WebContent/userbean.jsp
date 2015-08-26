@@ -10,6 +10,7 @@
 	<jsp:useBean id="s" class="com.eagle.bean.Student" scope="page"></jsp:useBean>
 	<jsp:setProperty property="name" value="三炮" name="s"/>
 	<jsp:getProperty property="name" name="s"/>
+<!-- 	will print the name -->
 	
 	<jsp:forward page="target.jsp">
 		<jsp:param value="tom" name="name"/>

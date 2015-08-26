@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-  <%@page import="java.util.*" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,23 +11,23 @@
 	<h1>声明</h1>
 	<%!
 		private String address;
-	public int go(){
-		System.out.println("in go()");
-		return 7897;
-	}
+		public int go(){
+			System.out.println("in go()");
+			return 7897;
+		}
 	%>
 	<h1>脚本</h1>
 	<%
-		String name="tom";
+		String name="Larry";
 		out.println("Hello word!");
 		List<String> list = new ArrayList<String>();
-		list.add("mimi");
-		list.add("jiji");
-		list.add("kitty");
+		list.add("Marry");
+		list.add("Toney");
+		list.add("Kitty");
 		for(String s:list){
 			out.println(s+"<br>");
 		}
-		address="koera";
+		address="Shanghai";
 	%>
 	<h1>表达式</h1>
 	<%="Hello" %>
